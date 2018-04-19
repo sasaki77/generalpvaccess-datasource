@@ -1,0 +1,40 @@
+<datasource-http-settings current="ctrl.current">
+</datasource-http-settings>
+
+<div class="gf-form-group">
+  <h3 class="page-heading">PvAccess API details</h3>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-9">
+      Prefix
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="text"
+           ng-model="ctrl.current.jsonData.prefix"
+           placeholder="RPC Name Prefix"
+           required>
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-9">
+      No of Parameters
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="number"
+           value=0
+           ng-model="ctrl.current.jsonData.noparams"
+           placeholder="No of Parms"
+           required>
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-9">
+      Enable Search
+    </span>
+    <gf-form-switch label-class="width-12"
+        checked="ctrl.current.jsonData.enbSearch">
+    </gf-form-switch>
+  </div>
+</div>

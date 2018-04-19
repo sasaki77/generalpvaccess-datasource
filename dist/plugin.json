@@ -1,0 +1,34 @@
+{
+  "name": "GeneralPvAccess",
+  "id": "sasaki77-general-pva-datasource",
+  "type": "datasource",
+
+  "partials": {
+    "config": "public/app/plugins/datasource/simplejson/partials/config.html"
+  },
+
+  "metrics": true,
+  "annotations": true,
+
+  "info": {
+    "description": "General PvAccess Datasource",
+    "author": {
+      "name": "Shinya Sasaki",
+      "url": "http://www-acc.kek.jp/WWW-ACC-exp/KEKB/control/KEKB-Control-home.html"
+    },
+    "logos": {
+      "small": "img/simpleJson_logo.svg",
+      "large": "img/simpleJson_logo.svg"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/sasaki77"}
+    ],
+    "version": "0.0.1",
+    "updated": "2018-04-19"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": [ ]
+  }
+}
