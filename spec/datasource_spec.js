@@ -5,7 +5,7 @@ describe('GenericDatasource', function() {
     var ctx = {};
 
     beforeEach(function() {
-        ctx.instanceSettings = {jsonData: { prefix: "prefix", enbSearch: true}};
+        ctx.instanceSettings = {jsonData: { prefix: "prefix", noparams: 1, param_names: ["test"], enbSearch: true}};
         ctx.$q = Q;
         ctx.backendSrv = {};
         ctx.templateSrv = {};
