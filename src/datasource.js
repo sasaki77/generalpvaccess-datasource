@@ -21,6 +21,7 @@ export class GenericDatasource {
     this.prefix = instanceSettings.jsonData.prefix;
     this.noparams = instanceSettings.jsonData.noparams;
     this.enbSearch = instanceSettings.jsonData.enbSearch;
+    this.param_names = instanceSettings.jsonData.param_names;
   }
 
   query(options) {
@@ -90,10 +91,6 @@ export class GenericDatasource {
         target: target
     };
 
-    //var interpolated = {
-        //target: this.templateSrv.replace(query , null, 'regex')
-    //};
-    //
     interpolated.prefix = this.prefix;
     interpolated.name = name;
 
@@ -129,12 +126,20 @@ export class GenericDatasource {
     });
 
     var targets = _.map(options.targets, target => {
+      var params = {};
+      if (target.param_vals) {
+        for (var i = 0, len = this.noparams; i < len; i++) {
+          var pn = this.param_names[i];
+          var val = target.param_vals[i];
+          params[pn] = val;
+        }
+      }
       return {
         target: this.templateSrv.replace(target.target, options.scopedVars, 'regex'),
         refId: target.refId,
         hide: target.hide,
         type: target.type || 'timeserie',
-        params: target.params
+        params: params
       };
     });
 

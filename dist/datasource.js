@@ -56,6 +56,7 @@ System.register(['lodash'], function (_export, _context) {
           this.prefix = instanceSettings.jsonData.prefix;
           this.noparams = instanceSettings.jsonData.noparams;
           this.enbSearch = instanceSettings.jsonData.enbSearch;
+          this.param_names = instanceSettings.jsonData.param_names;
         }
 
         _createClass(GenericDatasource, [{
@@ -131,10 +132,6 @@ System.register(['lodash'], function (_export, _context) {
               target: target
             };
 
-            //var interpolated = {
-            //target: this.templateSrv.replace(query , null, 'regex')
-            //};
-            //
             interpolated.prefix = this.prefix;
             interpolated.name = name;
 
@@ -175,12 +172,20 @@ System.register(['lodash'], function (_export, _context) {
             });
 
             var targets = _.map(options.targets, function (target) {
+              var params = {};
+              if (target.param_vals) {
+                for (var i = 0, len = _this.noparams; i < len; i++) {
+                  var pn = _this.param_names[i];
+                  var val = target.param_vals[i];
+                  params[pn] = val;
+                }
+              }
               return {
                 target: _this.templateSrv.replace(target.target, options.scopedVars, 'regex'),
                 refId: target.refId,
                 hide: target.hide,
                 type: target.type || 'timeserie',
-                params: target.params
+                params: params
               };
             });
 

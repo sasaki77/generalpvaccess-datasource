@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./datasource', './query_ctrl'], function (_export, _context) {
+System.register(['./datasource', './query_ctrl', './config_ctrl'], function (_export, _context) {
   "use strict";
 
   var GenericDatasource, GenericDatasourceQueryCtrl, GenericConfigCtrl, GenericQueryOptionsCtrl, GenericAnnotationsQueryCtrl;
@@ -16,14 +16,10 @@ System.register(['./datasource', './query_ctrl'], function (_export, _context) {
       GenericDatasource = _datasource.GenericDatasource;
     }, function (_query_ctrl) {
       GenericDatasourceQueryCtrl = _query_ctrl.GenericDatasourceQueryCtrl;
+    }, function (_config_ctrl) {
+      GenericConfigCtrl = _config_ctrl.GenericConfigCtrl;
     }],
     execute: function () {
-      _export('ConfigCtrl', GenericConfigCtrl = function GenericConfigCtrl() {
-        _classCallCheck(this, GenericConfigCtrl);
-      });
-
-      GenericConfigCtrl.templateUrl = 'partials/config.html';
-
       _export('QueryOptionsCtrl', GenericQueryOptionsCtrl = function GenericQueryOptionsCtrl() {
         _classCallCheck(this, GenericQueryOptionsCtrl);
       });

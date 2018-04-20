@@ -25,6 +25,7 @@
            value=0
            ng-model="ctrl.current.jsonData.noparams"
            placeholder="No of Parms"
+           ng-change="ctrl.changeParamNo()"
            required>
     </input>
   </div>
@@ -36,5 +37,24 @@
     <gf-form-switch label-class="width-12"
         checked="ctrl.current.jsonData.enbSearch">
     </gf-form-switch>
+  </div>
+</div>
+
+<div class="gf-form-group">
+  <h3 class="page-heading">PvAccess parameters</h3>
+
+  <div ng-repeat="param in ctrl.current.jsonData.param_names track by $index">
+    <div class="gf-form">
+      <span class="gf-form-label width-9">
+          Param {{$index}} name
+      </span>
+      <input class="gf-form-input max-width-21"
+             type="text"
+             value=0
+             ng-model="ctrl.current.jsonData.param_names[$index]"
+             placeholder="param name"
+             required>
+      </input>
+    </div>
   </div>
 </div>
