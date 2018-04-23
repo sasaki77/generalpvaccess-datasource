@@ -5,13 +5,13 @@
       <select class="gf-form-input" ng-model="ctrl.target.type" ng-options="f as f for f in ['table', 'timeserie']"></select>
     </div>
 
-    <div ng-repeat="param in ctrl.target.param_names track by $index">
+    <div ng-repeat="param_name in ctrl.target.param_names">
       <div class="gf-form">
-        <label class="gf-form-label width-6 query-keyword">{{ctrl.target.param_names[$index]}}</label>
-        <gf-form-dropdown model="ctrl.target.param_vals[$index]"
+        <label class="gf-form-label width-6 query-keyword">{{param_name}}</label>
+        <gf-form-dropdown model="ctrl.target.param_vals[param_name]"
           allow-custom="true"
           lookup-text="true"
-          get-options="ctrl.getOptions($query,ctrl.target.param_names[$index])"
+          get-options="ctrl.getOptions($query, param_name)"
           on-change="ctrl.onChangeInternal()">
         </gf-form-dropdown>
       </div>

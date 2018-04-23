@@ -130,7 +130,7 @@ export class GenericDatasource {
       if (target.param_vals) {
         for (var i = 0, len = this.noparams; i < len; i++) {
           var pn = this.param_names[i];
-          var val = target.param_vals[i];
+          var val = target.param_vals[pn];
           params[pn] = val;
         }
       }

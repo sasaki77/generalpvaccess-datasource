@@ -70,15 +70,8 @@ System.register(['app/plugins/sdk', './css/query-editor.css!'], function (_expor
           _this.target.target = _this.target.target || 'select metric';
           _this.target.type = _this.target.type || 'timeserie';
 
-          _this.target.param_names = _this.target.param_names || _this.datasource.param_names;
-          if (_this.target.param_vals) {
-            _this.target.param_vals = _this.target.param_vals;
-          } else {
-            _this.target.param_vals = new Array(_this.datasource.noparams);
-            for (var i = 0; i < _this.datasource.noparams; i++) {
-              _this.target.param_vals[i] = "";
-            }
-          }
+          _this.target.param_names = _this.datasource.param_names;
+          _this.target.param_vals = _this.target.param_vals || {};
           return _this;
         }
 

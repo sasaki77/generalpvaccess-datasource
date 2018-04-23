@@ -10,15 +10,8 @@ export class GenericDatasourceQueryCtrl extends QueryCtrl {
     this.target.target = this.target.target || 'select metric';
     this.target.type = this.target.type || 'timeserie';
 
-    this.target.param_names = this.target.param_names || this.datasource.param_names;
-    if (this.target.param_vals) {
-      this.target.param_vals = this.target.param_vals;
-    }else{
-      this.target.param_vals = new Array(this.datasource.noparams);
-      for (var i = 0; i < this.datasource.noparams; i++) {
-        this.target.param_vals[i] = "";
-      }
-    }
+    this.target.param_names = this.datasource.param_names;
+    this.target.param_vals = this.target.param_vals || {};
   }
 
   getOptions(query, name) {
