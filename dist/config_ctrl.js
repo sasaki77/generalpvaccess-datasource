@@ -49,7 +49,7 @@ System.register([], function (_export, _context) {
 
             for (var i = 0; i < max_len; i++) {
               if (i >= new_len) {
-                this.current.jsonData.param_names.splice(i, max_len - 1);
+                this.current.jsonData.param_names.splice(i, max_len - i);
                 break;
               }
               if (i >= old_len) {
