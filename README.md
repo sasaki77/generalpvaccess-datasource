@@ -98,7 +98,7 @@ If the metric selected is `"type": "table"`, an example `table` response:
 
 ### Annotation API
 
-The annotation request from the Simple JSON Datasource is a POST request to
+The annotation request from the generalpvaccess-datasource is a POST request to
 the /annotations endpoint in your datasource. The JSON request body looks like this:
 ``` javascript
 {
