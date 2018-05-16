@@ -1,4 +1,4 @@
-## General pvAccess Datasource
+# General pvAccess Datasource
 
 Visualize EPICS pvAccess RPC data on Grafana. This plugin based on [simple-json-datasource](https://github.com/grafana/simple-json-datasource)
 
