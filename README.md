@@ -22,6 +22,10 @@ Your backend needs to implement 4 urls:
 - `/annotations` should return annotations.
 - `/search` used by the find metric options on the query tab in panels (optional).
 
+## Example backend implementation
+
+- https://github.com/sasaki77/gfhttpva
+
 ### Query API
 
 Example `timeserie` request
