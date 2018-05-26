@@ -21,10 +21,11 @@
       "large": "img/EPICS_Logo.png"
     },
     "links": [
-      {"name": "GitHub", "url": "https://github.com/sasaki77"}
+      {"name": "GitHub", "url": "https://github.com/sasaki77/generalpvaccess-datasource"},
+      {"name": "MIT License", "url": "https://github.com/sasaki77/generalpvaccess-datasource/blob/master/LICENSE"}
     ],
-    "version": "0.0.1",
-    "updated": "2018-04-19"
+    "version": "0.1.0",
+    "updated": "2018-05-27"
   },
 
   "dependencies": {
