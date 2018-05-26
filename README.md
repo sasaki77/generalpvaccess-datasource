@@ -5,7 +5,7 @@ Visualize EPICS pvAccess RPC data on Grafana. This plugin based on [simple-json-
 See [EPICS site](https://epics.anl.gov/) for pvAccess RPC information.
 
 ## Features
-- Prefix of pvAccess RPC name can be passed in each datasource
+- pvAccess RPC channel names for query, annotations and search are passed from datasource configuration panel
 - Configurable query parameters for each datasource
 - Show timeseries data and table data
 
@@ -52,7 +52,7 @@ Example `timeserie` request
   ],
   "maxDataPoints": 399,
   "jsonData": {
-    "prefix": "PVACCESS:RPC:PREFIX:"
+    "ch": "PVACCESS:RPC:CH:NAME"
   }
 }
 ```
@@ -119,7 +119,7 @@ the /annotations endpoint in your datasource. The JSON request body looks like t
     "datasource": "foo datasource",
     "iconColor": "rgba(255, 96, 96, 1)",
     "enable": true,
-    "prefix": "PVACCESS:RPC:PREFIX:",
+    "ch": "PVACCESS:RPC:CH:NAME",
     "entity": "bar"
   }
 }
@@ -154,7 +154,7 @@ Access-Control-Allow-Origin:*
 
 Example request
 ``` javascript
-{"prefix": "PVACCESS:RPC:PREFIX:", "target": "sine", "name": "entity"}
+{"ch": "PVACCESS:RPC:CH:NAME", "target": "sine", "name": "entity"}
 ```
 
 The search api can either return an array or map.
