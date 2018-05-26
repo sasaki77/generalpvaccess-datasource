@@ -6,13 +6,45 @@
 
   <div class="gf-form">
     <span class="gf-form-label width-9">
-      Prefix
+      Query RPC ch
     </span>
     <input class="gf-form-input max-width-21"
            type="text"
-           ng-model="ctrl.current.jsonData.prefix"
-           placeholder="RPC Name Prefix"
-           required>
+           ng-model="ctrl.current.jsonData.queryCh"
+           placeholder="Query RPC channel Name"
+           >
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-9">
+      Annotation RPC ch
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="text"
+           ng-model="ctrl.current.jsonData.annCh"
+           placeholder="Annotation RPC channel Name"
+           >
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-9">
+      Enable Search
+    </span>
+    <gf-form-switch label-class="width-12"
+        checked="ctrl.current.jsonData.enbSearch">
+    </gf-form-switch>
+
+    <span class="gf-form-label width-9" ng-show="ctrl.current.jsonData.enbSearch">
+        Search RPC ch
+    </span>
+    <input class="gf-form-input max-width-21"
+             type="text"
+             ng-model="ctrl.current.jsonData.searchCh"
+             placeholder="Search RPC channel name"
+             ng-show="ctrl.current.jsonData.enbSearch"
+             >
     </input>
   </div>
 
@@ -24,20 +56,12 @@
            type="number"
            value=0
            ng-model="ctrl.current.jsonData.noparams"
-           placeholder="No of Parms"
+           placeholder="No of Query RPC Parms"
            ng-change="ctrl.changeParamNo()"
            required>
     </input>
   </div>
 
-  <div class="gf-form">
-    <span class="gf-form-label width-9">
-      Enable Search
-    </span>
-    <gf-form-switch label-class="width-12"
-        checked="ctrl.current.jsonData.enbSearch">
-    </gf-form-switch>
-  </div>
 </div>
 
 <div class="gf-form-group">

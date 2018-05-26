@@ -53,10 +53,12 @@ System.register(['lodash'], function (_export, _context) {
           var jsonData = instanceSettings.jsonData || {};
 
           // PvAccess API settings
-          this.prefix = instanceSettings.jsonData.prefix;
           this.noparams = instanceSettings.jsonData.noparams;
           this.enbSearch = instanceSettings.jsonData.enbSearch;
           this.param_names = instanceSettings.jsonData.param_names;
+          this.queryCh = instanceSettings.jsonData.queryCh;
+          this.annCh = instanceSettings.jsonData.annCh;
+          this.searchCh = instanceSettings.jsonData.searchCh;
         }
 
         _createClass(GenericDatasource, [{
@@ -100,7 +102,7 @@ System.register(['lodash'], function (_export, _context) {
                 datasource: options.annotation.datasource,
                 enable: options.annotation.enable,
                 iconColor: options.annotation.iconColor,
-                prefix: this.prefix,
+                ch: this.annCh,
                 entity: query
               },
               rangeRaw: options.rangeRaw
@@ -132,7 +134,7 @@ System.register(['lodash'], function (_export, _context) {
               target: target
             };
 
-            interpolated.prefix = this.prefix;
+            interpolated.ch = this.searchCh;
             interpolated.name = name;
 
             return this.doRequest({
@@ -190,7 +192,7 @@ System.register(['lodash'], function (_export, _context) {
             });
 
             options.targets = targets;
-            options.jsonData = { prefix: this.prefix };
+            options.jsonData = { ch: this.queryCh };
 
             return options;
           }

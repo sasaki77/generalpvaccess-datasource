@@ -1,8 +1,8 @@
 {
   "name": "sasaki77-general-pva",
   "private": true,
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "General pvAccess Datasource",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/grunt-cli/bin/grunt",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/sasaki77/generalpvaccess-datasource.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Shinya Sasaki",
+  "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/sasaki77/generalpvaccess-datasource/issues"
   },
   "engines": {
     "node": "6.10.0"
@@ -46,5 +46,5 @@
     "lodash": "^4.17.4",
     "mocha": "^3.2.0"
   },
-  "homepage": ""
+  "homepage": "https://github.com/sasaki77/generalpvaccess-datasource#readme"
 }
