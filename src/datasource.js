@@ -18,10 +18,12 @@ export class GenericDatasource {
     const jsonData = instanceSettings.jsonData || {};
 
     // PvAccess API settings
-    this.prefix = instanceSettings.jsonData.prefix;
     this.noparams = instanceSettings.jsonData.noparams;
     this.enbSearch = instanceSettings.jsonData.enbSearch;
     this.param_names = instanceSettings.jsonData.param_names;
+    this.queryCh = instanceSettings.jsonData.queryCh;
+    this.annCh = instanceSettings.jsonData.annCh;
+    this.searchCh = instanceSettings.jsonData.searchCh;
   }
 
   query(options) {
@@ -59,7 +61,7 @@ export class GenericDatasource {
         datasource: options.annotation.datasource,
         enable: options.annotation.enable,
         iconColor: options.annotation.iconColor,
-        prefix: this.prefix,
+        ch: this.annCh,
         entity: query
       },
       rangeRaw: options.rangeRaw
@@ -91,7 +93,7 @@ export class GenericDatasource {
         target: target
     };
 
-    interpolated.prefix = this.prefix;
+    interpolated.ch = this.searchCh;
     interpolated.name = name;
 
     return this.doRequest({
@@ -144,7 +146,7 @@ export class GenericDatasource {
     });
 
     options.targets = targets;
-    options.jsonData = {prefix: this.prefix};
+    options.jsonData = {ch: this.queryCh};
 
     return options;
   }
