@@ -17,8 +17,8 @@
       "url": "http://www-acc.kek.jp/WWW-ACC-exp/KEKB/control/KEKB-Control-home.html"
     },
     "logos": {
-      "small": "img/simpleJson_logo.svg",
-      "large": "img/simpleJson_logo.svg"
+      "small": "img/EPICS_Logo.png",
+      "large": "img/EPICS_Logo.png"
     },
     "links": [
       {"name": "GitHub", "url": "https://github.com/sasaki77"}
