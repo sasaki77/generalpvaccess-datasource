@@ -2,10 +2,10 @@
 </datasource-http-settings>
 
 <div class="gf-form-group">
-  <h3 class="page-heading">PvAccess API details</h3>
+  <h3 class="page-heading">PvAccess URI settings</h3>
 
   <div class="gf-form">
-    <span class="gf-form-label width-9">
+    <span class="gf-form-label width-10">
       Query RPC ch
     </span>
     <input class="gf-form-input max-width-21"
@@ -17,7 +17,7 @@
   </div>
 
   <div class="gf-form">
-    <span class="gf-form-label width-9">
+    <span class="gf-form-label width-10">
       Annotation RPC ch
     </span>
     <input class="gf-form-input max-width-21"
@@ -29,14 +29,14 @@
   </div>
 
   <div class="gf-form">
-    <span class="gf-form-label width-9">
+    <span class="gf-form-label width-10">
       Enable Search
     </span>
     <gf-form-switch label-class="width-12"
         checked="ctrl.current.jsonData.enbSearch">
     </gf-form-switch>
 
-    <span class="gf-form-label width-9" ng-show="ctrl.current.jsonData.enbSearch">
+    <span class="gf-form-label width-10" ng-show="ctrl.current.jsonData.enbSearch">
         Search RPC ch
     </span>
     <input class="gf-form-input max-width-21"
@@ -47,9 +47,63 @@
              >
     </input>
   </div>
+</div>
+
+<div class="gf-form-group">
+  <h3 class="page-heading">PvAccess query arguments settings</h3>
 
   <div class="gf-form">
-    <span class="gf-form-label width-9">
+    <span class="gf-form-label width-10">
+      NTURI style request
+    </span>
+    <gf-form-switch label-class="width-12"
+        checked="ctrl.current.jsonData.enbNTURI">
+    </gf-form-switch>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-10">
+      Entity filed label
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="text"
+           ng-model="ctrl.current.jsonData.entityLabel"
+           placeholder="Entity field label"
+           >
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-10">
+      Start filed label
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="text"
+           ng-model="ctrl.current.jsonData.startLabel"
+           placeholder="Start field label"
+           >
+    </input>
+  </div>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-10">
+      End filed label
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="text"
+           ng-model="ctrl.current.jsonData.endLabel"
+           placeholder="End field label"
+           >
+    </input>
+  </div>
+
+</div>
+
+<div class="gf-form-group">
+  <h3 class="page-heading">PvAccess parameters</h3>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-10">
       No of Parameters
     </span>
     <input class="gf-form-input max-width-21"
@@ -62,14 +116,9 @@
     </input>
   </div>
 
-</div>
-
-<div class="gf-form-group">
-  <h3 class="page-heading">PvAccess parameters</h3>
-
   <div ng-repeat="param in ctrl.current.jsonData.param_names track by $index">
     <div class="gf-form">
-      <span class="gf-form-label width-9">
+      <span class="gf-form-label width-10">
           Param {{$index}} name
       </span>
       <input class="gf-form-input max-width-21"

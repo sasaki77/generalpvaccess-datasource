@@ -24,6 +24,10 @@ export class GenericDatasource {
     this.queryCh = instanceSettings.jsonData.queryCh;
     this.annCh = instanceSettings.jsonData.annCh;
     this.searchCh = instanceSettings.jsonData.searchCh;
+    this.entityLabel = instanceSettings.jsonData.entityLabel;
+    this.startLabel = instanceSettings.jsonData.startLabel;
+    this.endLabel = instanceSettings.jsonData.endLabel;
+    this.enbNTURI = instanceSettings.jsonData.enbNTURI;
   }
 
   query(options) {
@@ -64,7 +68,12 @@ export class GenericDatasource {
         ch: this.annCh,
         entity: query
       },
-      rangeRaw: options.rangeRaw
+      rangeRaw: options.rangeRaw,
+      jsonData: { entity_label: this.entityLabel,
+                  start_label: this.startLabel,
+                  end_label: this.endLabel,
+                  nturi_style: this.enbNTURI
+      }
     };
 
     return this.doRequest({
@@ -95,6 +104,7 @@ export class GenericDatasource {
 
     interpolated.ch = this.searchCh;
     interpolated.name = name;
+    interpolated.nturi_style = this.enbNTURI;
 
     return this.doRequest({
       url: this.url + '/search',
@@ -146,7 +156,11 @@ export class GenericDatasource {
     });
 
     options.targets = targets;
-    options.jsonData = {ch: this.queryCh};
+    options.jsonData = {ch: this.queryCh,
+                        entity_label: this.entityLabel,
+                        start_label: this.startLabel,
+                        end_label: this.endLabel,
+                        nturi_style: this.enbNTURI};
 
     return options;
   }

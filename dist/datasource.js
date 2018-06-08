@@ -59,6 +59,10 @@ System.register(['lodash'], function (_export, _context) {
           this.queryCh = instanceSettings.jsonData.queryCh;
           this.annCh = instanceSettings.jsonData.annCh;
           this.searchCh = instanceSettings.jsonData.searchCh;
+          this.entityLabel = instanceSettings.jsonData.entityLabel;
+          this.startLabel = instanceSettings.jsonData.startLabel;
+          this.endLabel = instanceSettings.jsonData.endLabel;
+          this.enbNTURI = instanceSettings.jsonData.enbNTURI;
         }
 
         _createClass(GenericDatasource, [{
@@ -105,7 +109,12 @@ System.register(['lodash'], function (_export, _context) {
                 ch: this.annCh,
                 entity: query
               },
-              rangeRaw: options.rangeRaw
+              rangeRaw: options.rangeRaw,
+              jsonData: { entity_label: this.entityLabel,
+                start_label: this.startLabel,
+                end_label: this.endLabel,
+                nturi_style: this.enbNTURI
+              }
             };
 
             return this.doRequest({
@@ -136,6 +145,7 @@ System.register(['lodash'], function (_export, _context) {
 
             interpolated.ch = this.searchCh;
             interpolated.name = name;
+            interpolated.nturi_style = this.enbNTURI;
 
             return this.doRequest({
               url: this.url + '/search',
@@ -192,7 +202,11 @@ System.register(['lodash'], function (_export, _context) {
             });
 
             options.targets = targets;
-            options.jsonData = { ch: this.queryCh };
+            options.jsonData = { ch: this.queryCh,
+              entity_label: this.entityLabel,
+              start_label: this.startLabel,
+              end_label: this.endLabel,
+              nturi_style: this.enbNTURI };
 
             return options;
           }
