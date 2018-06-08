@@ -106,11 +106,11 @@ System.register(['lodash'], function (_export, _context) {
                 datasource: options.annotation.datasource,
                 enable: options.annotation.enable,
                 iconColor: options.annotation.iconColor,
-                ch: this.annCh,
                 entity: query
               },
               rangeRaw: options.rangeRaw,
-              jsonData: { entity_label: this.entityLabel,
+              jsonData: { ch: this.annCh,
+                entity_label: this.entityLabel,
                 start_label: this.startLabel,
                 end_label: this.endLabel,
                 nturi_style: this.enbNTURI

@@ -52,7 +52,11 @@ Example `timeserie` request
   ],
   "maxDataPoints": 399,
   "jsonData": {
-    "ch": "PVACCESS:RPC:CH:NAME"
+    "ch": "PVACCESS:RPC:CH:NAME",
+    "start_label": "starttime",
+    "end_label": "endtime",
+    "entity_label": "entity",
+    "nturi_style": false
   }
 }
 ```
@@ -122,6 +126,12 @@ the /annotations endpoint in your datasource. The JSON request body looks like t
     "ch": "PVACCESS:RPC:CH:NAME",
     "entity": "bar"
   }
+  "jsonData": {
+    "start_label": "starttime",
+    "end_label": "endtime",
+    "entity_label": "entity",
+    "nturi_style": false
+  }
 }
 ```
 
@@ -154,7 +164,7 @@ Access-Control-Allow-Origin:*
 
 Example request
 ``` javascript
-{"ch": "PVACCESS:RPC:CH:NAME", "target": "sine", "name": "entity"}
+{"ch": "PVACCESS:RPC:CH:NAME", "target": "sine", "name": "entity", "nturi_style": false}
 ```
 
 The search api can either return an array or map.
