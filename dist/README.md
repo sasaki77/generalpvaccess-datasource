@@ -123,10 +123,10 @@ the /annotations endpoint in your datasource. The JSON request body looks like t
     "datasource": "foo datasource",
     "iconColor": "rgba(255, 96, 96, 1)",
     "enable": true,
-    "ch": "PVACCESS:RPC:CH:NAME",
     "entity": "bar"
   }
   "jsonData": {
+    "ch": "PVACCESS:RPC:CH:NAME",
     "start_label": "starttime",
     "end_label": "endtime",
     "entity_label": "entity",
