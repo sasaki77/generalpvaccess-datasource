@@ -188,7 +188,7 @@ System.register(['lodash'], function (_export, _context) {
               if (target.param_vals) {
                 for (var i = 0, len = _this.noparams; i < len; i++) {
                   var pn = _this.param_names[i];
-                  var val = target.param_vals[pn];
+                  var val = _this.templateSrv.replace(target.param_vals[pn], options.scopedVars, 'glob');
                   params[pn] = val;
                 }
               }
