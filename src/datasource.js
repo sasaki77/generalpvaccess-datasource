@@ -28,6 +28,8 @@ export class GenericDatasource {
     this.startLabel = instanceSettings.jsonData.startLabel;
     this.endLabel = instanceSettings.jsonData.endLabel;
     this.enbNTURI = instanceSettings.jsonData.enbNTURI;
+    this.annNoparams = instanceSettings.jsonData.annNoparams;
+    this.annParam_names = instanceSettings.jsonData.annParam_names;
   }
 
   query(options) {
@@ -58,6 +60,16 @@ export class GenericDatasource {
 
   annotationQuery(options) {
     var query = this.templateSrv.replace(options.annotation.query, {}, 'glob');
+
+    var params = {};
+    if (options.annotation.param_vals) {
+      for (var i = 0, len = this.noparams; i < len; i++) {
+        var pn = this.param_names[i];
+        var val = this.templateSrv.replace(options.annotation.param_vals[pn], {}, 'glob');
+        params[pn] = val;
+      }
+    }
+
     var annotationQuery = {
       range: options.range,
       annotation: {
@@ -65,7 +77,8 @@ export class GenericDatasource {
         datasource: options.annotation.datasource,
         enable: options.annotation.enable,
         iconColor: options.annotation.iconColor,
-        entity: query
+        entity: query,
+        params: params
       },
       rangeRaw: options.rangeRaw,
       jsonData: { ch: this.annCh,

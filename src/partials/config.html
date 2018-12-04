@@ -131,3 +131,36 @@
     </div>
   </div>
 </div>
+
+<div class="gf-form-group">
+  <h3 class="page-heading">PvAccess Annotation parameters</h3>
+
+  <div class="gf-form">
+    <span class="gf-form-label width-10">
+      No of Parameters
+    </span>
+    <input class="gf-form-input max-width-21"
+           type="number"
+           value=0
+           ng-model="ctrl.current.jsonData.annNoparams"
+           placeholder="No of Query RPC Parms"
+           ng-change="ctrl.changeAnnParamNo()"
+           required>
+    </input>
+  </div>
+
+  <div ng-repeat="param in ctrl.current.jsonData.annParam_names track by $index">
+    <div class="gf-form">
+      <span class="gf-form-label width-10">
+          Param {{$index}} name
+      </span>
+      <input class="gf-form-input max-width-21"
+             type="text"
+             value=0
+             ng-model="ctrl.current.jsonData.annParam_names[$index]"
+             placeholder="param name"
+             required>
+      </input>
+    </div>
+  </div>
+</div>

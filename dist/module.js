@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['./datasource', './query_ctrl', './config_ctrl'], function (_export, _context) {
+System.register(['./datasource', './query_ctrl', './config_ctrl', './annotation_ctrl'], function (_export, _context) {
   "use strict";
 
-  var GenericDatasource, GenericDatasourceQueryCtrl, GenericConfigCtrl, GenericQueryOptionsCtrl, GenericAnnotationsQueryCtrl;
+  var GenericDatasource, GenericDatasourceQueryCtrl, GenericConfigCtrl, GenericAnnotationsQueryCtrl, GenericQueryOptionsCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -18,6 +18,8 @@ System.register(['./datasource', './query_ctrl', './config_ctrl'], function (_ex
       GenericDatasourceQueryCtrl = _query_ctrl.GenericDatasourceQueryCtrl;
     }, function (_config_ctrl) {
       GenericConfigCtrl = _config_ctrl.GenericConfigCtrl;
+    }, function (_annotation_ctrl) {
+      GenericAnnotationsQueryCtrl = _annotation_ctrl.GenericAnnotationsQueryCtrl;
     }],
     execute: function () {
       _export('QueryOptionsCtrl', GenericQueryOptionsCtrl = function GenericQueryOptionsCtrl() {
@@ -25,12 +27,6 @@ System.register(['./datasource', './query_ctrl', './config_ctrl'], function (_ex
       });
 
       GenericQueryOptionsCtrl.templateUrl = 'partials/query.options.html';
-
-      _export('AnnotationsQueryCtrl', GenericAnnotationsQueryCtrl = function GenericAnnotationsQueryCtrl() {
-        _classCallCheck(this, GenericAnnotationsQueryCtrl);
-      });
-
-      GenericAnnotationsQueryCtrl.templateUrl = 'partials/annotations.editor.html';
 
       _export('Datasource', GenericDatasource);
 

@@ -63,6 +63,8 @@ System.register(['lodash'], function (_export, _context) {
           this.startLabel = instanceSettings.jsonData.startLabel;
           this.endLabel = instanceSettings.jsonData.endLabel;
           this.enbNTURI = instanceSettings.jsonData.enbNTURI;
+          this.annNoparams = instanceSettings.jsonData.annNoparams;
+          this.annParam_names = instanceSettings.jsonData.annParam_names;
         }
 
         _createClass(GenericDatasource, [{
@@ -99,6 +101,16 @@ System.register(['lodash'], function (_export, _context) {
           key: 'annotationQuery',
           value: function annotationQuery(options) {
             var query = this.templateSrv.replace(options.annotation.query, {}, 'glob');
+
+            var params = {};
+            if (options.annotation.param_vals) {
+              for (var i = 0, len = this.noparams; i < len; i++) {
+                var pn = this.param_names[i];
+                var val = this.templateSrv.replace(options.annotation.param_vals[pn], {}, 'glob');
+                params[pn] = val;
+              }
+            }
+
             var annotationQuery = {
               range: options.range,
               annotation: {
@@ -106,7 +118,8 @@ System.register(['lodash'], function (_export, _context) {
                 datasource: options.annotation.datasource,
                 enable: options.annotation.enable,
                 iconColor: options.annotation.iconColor,
-                entity: query
+                entity: query,
+                params: params
               },
               rangeRaw: options.rangeRaw,
               jsonData: { ch: this.annCh,
