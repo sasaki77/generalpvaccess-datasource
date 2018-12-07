@@ -104,8 +104,8 @@ System.register(['lodash'], function (_export, _context) {
 
             var params = {};
             if (options.annotation.param_vals) {
-              for (var i = 0, len = this.noparams; i < len; i++) {
-                var pn = this.param_names[i];
+              for (var i = 0, len = this.annNoparams; i < len; i++) {
+                var pn = this.annParam_names[i];
                 var val = this.templateSrv.replace(options.annotation.param_vals[pn], {}, 'glob');
                 params[pn] = val;
               }
